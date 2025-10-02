@@ -26,7 +26,7 @@ export default function ServicesPage() {
                     <Image className="rounded-lg" src={service.img} alt={service.img} width={500} height={300} unoptimized />
                     <h2 className="text-xl font-semibold">{service.title}</h2>
                     <div className="p-1 flex justify-between items-center">
-                        <p className=" text-lg font-medium">${service.price}</p>
+                        <p className=" text-lg text-orange-800 font-medium">${service.price}</p>
                         <button onClick={() => router.push(`/booking/${service._id}`)} className="btn p-2 text-white font-medium rounded-xl bg-orange-500 hover:bg-orange-600">Add to Cart</button>
                     </div>
                   </div>

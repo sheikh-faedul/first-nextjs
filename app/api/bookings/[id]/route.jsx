@@ -1,7 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
-import { NextResponse } from "next/server";
-
+ 
 export async function DELETE(req, { params }) {
     try {
         const client= await clientPromise;
@@ -30,7 +29,7 @@ export async function PATCH(req, { params }) {
     const db = client.db("firstDB");
 
     const { id } = params;
-    const { status } = await req.json(); // get status from request
+    const { status } = await req.json();  
 
     const result = await db.collection("checkout").updateOne(
       { _id: new ObjectId(id) },

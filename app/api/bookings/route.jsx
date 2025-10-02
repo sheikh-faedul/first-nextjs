@@ -4,11 +4,7 @@ export async function POST(req) {
   try {
     const client = await clientPromise;
     const db = client.db("firstDB");
-
-    // parse incoming JSON
     const body = await req.json();
-
-    // Insert into "checkout" collection
     const result = await db.collection("checkout").insertOne(body);
 
     return new Response(

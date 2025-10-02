@@ -6,10 +6,12 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const navitem = (
     <>
@@ -52,7 +54,7 @@ export default function Navbar() {
           {navitem}
         </div>
 
-        <button className="hidden md:block p-2 px-4 text-white font-bold rounded-xl bg-orange-500 hover:bg-orange-600">
+        <button onClick={() => router.push('/bookings')} className="hidden md:block p-2 px-4 text-white font-bold rounded-xl bg-orange-500 hover:bg-orange-600">
           Appointment
         </button>
         <button

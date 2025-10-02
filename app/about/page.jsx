@@ -1,7 +1,13 @@
  'use client'
  import Image from "next/image";
+import { useRouter } from "next/navigation";
+
+
 
 export default function AboutPage() {
+
+  const router= useRouter();
+
   return (
     <div className="container min-h-screen mt-5 flex flex-col lg:flex-row">
       <div className="lg:w-1/2 relative">
@@ -27,7 +33,7 @@ export default function AboutPage() {
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button className=" p-2 text-black font-bold rounded-xl bg-orange-500 hover:bg-orange-600">Get More Info</button>
+                    <button onClick={() =>router.push('/about')} className=" p-2 text-black font-bold rounded-xl bg-orange-500 hover:bg-orange-600">Get More Info</button>
                 </div>
     </div>
   );
